@@ -14,8 +14,4 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: connect and pull
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "
-        cd /home/pi/Git/RoryBot && 
-        git checkout feature/github_ssh_actions && 
-        git pull && 
-        node deploy-commands.js"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && git checkout feature/github_ssh_actions && git pull && node deploy-commands.js && exit"
