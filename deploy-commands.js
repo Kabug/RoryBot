@@ -1,10 +1,10 @@
-require('dotenv').config(); //initialize dotenv
-const { REST, Routes } = require('discord.js');
-const fs = require('node:fs');
+require("dotenv").config(); //initialize dotenv
+const { REST, Routes } = require("discord.js");
+const fs = require("node:fs");
 
 const commands = [];
 // Grab all the command files from the commands directory you created earlier
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync("./commands").filter(file => file.endsWith(".js"));
 
 // Grab the SlashCommandBuilder#toJSON() output of each command's data for deployment
 for (const file of commandFiles) {
@@ -13,7 +13,7 @@ for (const file of commandFiles) {
 }
 
 // Construct and prepare an instance of the REST module
-const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_BOT_TOKEN);
+const rest = new REST({ version: "10" }).setToken(process.env.DISCORD_BOT_TOKEN);
 
 // and deploy your commands!
 (async () => {
@@ -22,8 +22,8 @@ const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_BOT_TOKEN)
 
 		// The put method is used to fully refresh all commands in the guild with the current set
 		const data = await rest.put(
-			// Routes.applicationCommands(process.env.CLIENT_ID), // Global
-			Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.DEV_GUILD_ID), // Dev Server Only
+			Routes.applicationCommands(process.env.CLIENT_ID), // Global
+			// Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.DEV_GUILD_ID), // Dev Server Only
 			{ body: commands },
 		);
 
