@@ -25,7 +25,8 @@ jobs:
             git fetch
             git checkout main --force
             git reset --hard
-            git pull 
+            git pull
+            npm i
 
 
       # - name: Connect and Pull
