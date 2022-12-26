@@ -12,7 +12,7 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: connect and pull
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && git fetch && git checkout feature/github_ssh_actions && git reset --hard && git pull && npm install && chown $(whoami) && npm run restart"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && git fetch && git checkout feature/github_ssh_actions && git reset --hard && git pull && npm install && chown $(whoami) && npm restart && exit"
 
           #     - name: Restart Node Server
           # uses: appleboy/ssh-action@v0.1.6
