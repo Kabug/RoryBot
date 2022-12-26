@@ -26,8 +26,8 @@ jobs:
             git checkout main --force
             git reset --hard
             git pull
-            source ~/.bashrc
-            nvm list
+        - name: NPM
+          run: ssh -l ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && nvm list"
 
 
       # - name: Connect and Pull
