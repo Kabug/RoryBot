@@ -19,4 +19,4 @@ jobs:
       - name: Connect and Pull
         run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && git fetch && git checkout main --force && git reset --hard && git pull && exit"
       - name: NPM
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && npm i && npm deploy && npm restart && exit"
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && npm i && npm run deploy && npm restart && exit"
