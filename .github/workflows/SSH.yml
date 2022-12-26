@@ -1,5 +1,10 @@
 name: CI Deployment Prod
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *' # Everyday at 12am
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -30,8 +35,3 @@ jobs:
             npm i
             npm run deploy
             npm restart
-
-      # - name: Connect and Pull
-      #   run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && git fetch && git checkout main --force && git reset --hard && git pull && exit"
-      # - name: NPM
-      #   run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && npm i && npm run deploy && npm restart && exit"
