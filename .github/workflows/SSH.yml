@@ -28,6 +28,7 @@ jobs:
             git pull
             source /home/pi/.config/nvm/nvm.sh
             nvm list
+            npm i
 
       # - name: Connect and Pull
       #   run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && git fetch && git checkout main --force && git reset --hard && git pull && exit"
