@@ -1,4 +1,4 @@
-name: Added palceholder ssh
+name: CI Deployment Prod
 on:
   push:
     branches:
