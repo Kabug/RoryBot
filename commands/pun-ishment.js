@@ -9,8 +9,13 @@ module.exports = {
 		const data = fs.readFileSync("./assets/quotes.txt");
 		if (data) {
 			const splitData = data.toString("utf8").split("\n");
-			const line = splitData.splice(Math.floor(Math.random() * splitData.length), 1)[0];
+			const line = splitData.splice(
+				Math.floor(Math.random() * splitData.length),
+				1
+			)[0];
 			await interaction.reply(line);
+		} else {
+			await interaction.reply("I'm... speachless!");
 		}
 	},
 };
