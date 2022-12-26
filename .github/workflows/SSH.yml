@@ -26,6 +26,7 @@ jobs:
             git checkout main --force
             git reset --hard
             git pull
+            source ~/.bashrc
             nvm list
 
 
