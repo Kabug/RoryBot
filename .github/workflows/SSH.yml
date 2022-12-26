@@ -11,5 +11,5 @@ jobs:
           known_hosts: unnecessary
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-    - name: connect and pull
-      run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && git checkout main && git pull && exit"
+      - name: connect and pull
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && git checkout main && git pull && exit"
