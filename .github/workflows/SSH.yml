@@ -26,9 +26,8 @@ jobs:
             git checkout main --force
             git reset --hard
             git pull
-            npm install -g npm
             npm i
-            npm run deploy
+            nvm run node deploy-commands.js
 
 
       # - name: Connect and Pull
