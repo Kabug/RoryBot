@@ -27,7 +27,7 @@ jobs:
             git reset --hard
             git pull
             npm i
-            nvm run node deploy-commands.js
+            ~/.nvm/nvm.sh && node deploy-commands.js
 
 
       # - name: Connect and Pull
