@@ -13,8 +13,8 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: Connect and Pull
         run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && git fetch && git checkout feature/github_ssh_actions && git reset --hard && git pull"
-      - name: Connect and Pull
-        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && npm i"
+      - name: NPM
+        run: ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && npm i && npm restart"
 
           #     - name: Restart Node Server
           # uses: appleboy/ssh-action@v0.1.6
