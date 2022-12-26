@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Exclude Obscene Quotes by my best bud Rory
+assets/quotes.txt
