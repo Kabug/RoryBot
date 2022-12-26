@@ -21,13 +21,13 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
+            source ~/.bashrc
             cd /home/pi/Git/RoryBot
             git fetch
             git checkout main --force
             git reset --hard
             git pull
-      - name: NPM
-        run: ssh -l ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST_IP }} "cd /home/pi/Git/RoryBot && nvm list"
+            nvm list
 
 
       # - name: Connect and Pull
