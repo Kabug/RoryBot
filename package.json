@@ -1,0 +1,28 @@
+{
+  "name": "rorybot",
+  "version": "1.0.0",
+  "description": "Don't summon Rodney I know he thinks I'm hot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kabug/RoryBot.git"
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "kabug",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kabug/RoryBot/issues"
+  },
+  "homepage": "https://github.com/Kabug/RoryBot#readme",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.30.0"
+  }
+}
