@@ -22,12 +22,12 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             source /home/pi/.config/nvm/nvm.sh
+            nvm list
             cd /home/pi/Git/RoryBot
             git fetch
             git checkout main --force
             git reset --hard
             git pull
-            nvm use
 
 
       # - name: Connect and Pull
