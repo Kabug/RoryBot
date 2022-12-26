@@ -22,6 +22,10 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/pi/Git/RoryBot
+            git fetch
+            git checkout main --force
+            git reset --hard
+            git pull 
 
 
       # - name: Connect and Pull
