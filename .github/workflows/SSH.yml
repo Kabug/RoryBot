@@ -19,7 +19,6 @@ jobs:
             host: ${{ secrets.SSH_HOST_IP }}
             username: ${{ secrets.SSH_USER }}
             key: ${{ secrets.SSH_PRIVATE_KEY }}
-            port: ${{ secrets.SSH_PORT }}
             script: |
               cd /home/pi/Git/RoryBot
               npm install
