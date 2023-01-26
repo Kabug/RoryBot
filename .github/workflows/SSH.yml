@@ -1,10 +1,5 @@
 name: CI Deployment Prod
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: '0 0 * * *' # Everyday at 12am
+on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
